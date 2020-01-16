@@ -32,9 +32,6 @@ body {
     font-weight: 700;
     letter-spacing: 1.75rem;
   
-    // animation-name: moveInRight;
-    // animation-duration: 3s;
-    // animation-timing-function: ease-out;
     animation: moveInRight 3s ease-out;
   }  
 }
@@ -43,12 +40,9 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  display: inline-block;
-  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-  
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+
+  @extend .gradient-text;
+
   letter-spacing: 2px;
 
   transition: all .2s;
@@ -70,4 +64,12 @@ body {
   &:not(:last-child) {
     margin-bottom: 3em;
   }
+}
+
+.gradient-text {
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;  
 }
