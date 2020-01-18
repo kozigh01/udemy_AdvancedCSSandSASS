@@ -32,17 +32,26 @@
     transition: all .4s;
   }
   &--white {
-    background-color: $color-white;
+    @extend btn__base--color;
     color: $color-gray-dark;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    &::after {
-      background-color: $color-white;
-    }
+    background-color: $color-white;
+  }
+  &--green {
+    @extend btn__base--color;
+    color: $color-white;
+    background-color: $color-primary;
   }
   &--animated {
     animation: moveInButton .5s ease-out .75s;
     animation-fill-mode: backwards;
+  }
+}
+
+btn__base--color {
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  &::after {
+    background-color: $color-white;
   }
 }
 
