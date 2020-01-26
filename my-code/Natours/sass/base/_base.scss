@@ -9,9 +9,33 @@ html {
   // font-size: 10px; // this over-rides the user font setting
 
   // this defines 1rem = 10px
-  font-size: 62.5%;
+  font-size: 62.5%;  // 1rem = 10px
+
+  @include respond(tab-land) {
+    font-size: 56.25%;  // 1rem == 9px => 9px/16px 56.25%
+  }
+  @include respond(tab-port) {
+    font-size: 50%;  // 1rem == 8px => 8px/16px 50%
+  }
+  // don't need to define phone if the same as tab-port
+  // @include respond(phone) {
+  //   font-size: 50%;  // 1rem == 8px => 8px/16px 50%
+  // }
+  @include respond(big-desktop) {
+    font-size: 75%;    // 1rem == 12px => 12/16 = 75%
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }

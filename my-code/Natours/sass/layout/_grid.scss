@@ -1,5 +1,10 @@
 .row {
   max-width: $grid-width;
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 3rem;
+  }
+
   // background-color: #ddd;
   margin: 0 auto;
 
@@ -10,13 +15,24 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
     }
 
-    // background-color: orchid;
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
   }
   
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+    
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   .col-1-of-2 {
